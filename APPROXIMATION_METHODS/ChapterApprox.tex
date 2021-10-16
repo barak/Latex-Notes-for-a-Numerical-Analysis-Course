@@ -242,7 +242,7 @@ j=1,...,n-1 \]
 \begin{theorem}
 If $f\in C^{4}[a,b]$ and $|f^{4}(x)|\leq L$ for $x \in [a,b]$ then,
 \[
-||M-F||\leq ||r|| \leq \frac{3}{4}L||\Delta||^{2} \]
+\lVert M-F\rVert \leq \lVert r\rVert  \leq \frac{3}{4}L\lVert \Delta\rVert ^{2} \]
 \end{theorem}
 Notation:
 \[
@@ -263,7 +263,7 @@ F=
       f^{''}(x_n)\end{array} \right)
 \]
 \[r=d-AF \]
-\[||\Delta||=max_j|x_{j+1}-x_{j}| \]
+\[\lVert \Delta\rVert =max_j|x_{j+1}-x_{j}| \]
 
 \begin{proof}
 By defn $r_0=d_0-2f^{''}(x_0)-f^{''}(x_1)$ and from (\ref{end points})
@@ -276,12 +276,12 @@ r_0&=& \frac{6}{h_1}(f^{'}(x_0)+\frac{h_{1}}{2}f^{''}(x_0)+\frac{h_1^2}{6}f^{'''
 &=& \frac{h_1^2}{4}f^{4}(\tau_1) - \frac{h_{1}^2}{2}f^{4}(\tau_2)
 \end{eqnarray*}
 with $\tau_1,\tau_2 \in [x_0,x_1]$. Hence
-\[ |r_0| \leq \frac{3}{4} L ||\Delta||^2 \]
+\[ |r_0| \leq \frac{3}{4} L \lVert \Delta\rVert ^2 \]
 Analogously we find
 \[
 r_n = d_n - f^{''}(x_{n-1})-2f^{''}(x_n) \]
 that 
-\[ |r_n| \leq \frac{3}{4} L ||\Delta||^2 \]
+\[ |r_n| \leq \frac{3}{4} L \lVert \Delta\rVert ^2 \]
 For the remaining components of $r=d-AF$ we find similarly
 \begin{eqnarray*}
 r_j&=&d_j - \mu_jf^{''}(x_{j-1})-2f^{''}(x_j) -\lambda_{j+1}f^{''}(x_{j+1})\\
@@ -294,23 +294,23 @@ Taylors formula at $x_j$ then gives
 r_j & =& \frac{1.0}{h_j+h_{j+1}}\left[ \frac{h_{j+1}^3}{4}f^{4}(\tau_1 )  \frac{h_{j+1}^3}{4}f^{4}(\tau_2 )  -\frac{h_{j+1}^3}{4}f^{4}(\tau_3 )  -\frac{h_{j+1}^3}{4}f^{4}(\tau_4 ) \right]
 \end{eqnarray*}
 where $\tau_1, \tau_2, \tau_3,\tau_4 \in [x_{j-1},x_{j+1}],$
-\[ |r_j| \leq \frac{3}{4}L \frac{[h_{j+1}^3+h_j^3]}{h_j+h_{j+1}}\leq \frac{3}{4}L||\Delta||^2 \]
+\[ |r_j| \leq \frac{3}{4}L \frac{[h_{j+1}^3+h_j^3]}{h_j+h_{j+1}}\leq \frac{3}{4}L\lVert \Delta\rVert ^2 \]
 for j=1,...,n-1
 \[
-||r|| \leq \frac{3}{4} L || \Delta ||^2 \]
-and since $r=A(M-F)$ implies $||M-F|| \leq ||r||$ using the non-singular properties of A.
+\lVert r\rVert  \leq \frac{3}{4} L \lVert  \Delta \rVert ^2 \]
+and since $r=A(M-F)$ implies $\lVert M-F\rVert  \leq \lVert r\rVert $ using the non-singular properties of A.
 \end{proof} $\bigodot$
 \begin{theorem}
 Suppose 
 $f \in C^{4}[a,b]$ and $ |f^{4}(x)| \leq L $for $x \in [a,b]$. Let $\Delta$ be a partition
 $\Delta = \{ a=x_0 < ... < x_n = b \} $ of the interval $[a,b]$, and K be a constant
 \[
-\frac{||\Delta||}{|x_{j+1}-x_{j}|} \leq K
+\frac{\lVert \Delta\rVert }{|x_{j+1}-x_{j}|} \leq K
 \]
 If $S_{\Delta}$ is the Spline function which interpolates the values of the function f at the knots $x_0,...x_n \in \Delta$
 and satisfies $S^{'}_{\Delta} = f^{'}(x)$ for $(a,b) $ then there exists constants $C_{k} \leq 2$ which do depend on the partition $\Delta$ such that for $ x \in [a,b]$
 \[
-|f^{(k)}(x)-S_{\Delta}^{k}(x)|\leq C_{k}LK||\Delta||^{4-k} \]
+|f^{(k)}(x)-S_{\Delta}^{k}(x)|\leq C_{k}LK\lVert \Delta\rVert ^{4-k} \]
 for k=0,1,2,3.
 \end{theorem}
 \begin{proof}
@@ -323,15 +323,15 @@ S^{'''}_{\Delta}(x)-f^{'''}(x)& = &\frac{M_j-M_{j-1}}{h_j} - f^{'''}(x)\\
 \end{eqnarray*}
 Using previous proof and Taylors Thm at we conclude
 \begin{eqnarray*}
- ||S^{'''}_{\Delta}(x)-f^{'''}(x)|| &\leq& \frac{3}{2}L\frac{||\Delta||^2}{h_j}\\
+ \lVert S^{'''}_{\Delta}(x)-f^{'''}(x)\rVert  &\leq& \frac{3}{2}L\frac{\lVert \Delta\rVert ^2}{h_j}\\
 & & + \frac{1}{h_j} \left|(x_j-x)f^{'''}(x) + \frac{(x_j-x)^2}{2} f^4(\eta_1)\right.\\
 & & \left.- (x_{j-1}-x)f^{'''}(x) + \frac{(x_{j-1}-x)^2}{2} f^4(\eta_2) - h_jf^{'''}(x) \right| \\
-&\leq& \frac{3}{2} L \frac{||\Delta||^2}{h_j} + \frac{L}{2} \frac{||\Delta||^{2}}{h_j} \ \ \ \eta_1,\eta_2 \in [x_{j-1},x_{j}]
+&\leq& \frac{3}{2} L \frac{\lVert \Delta\rVert ^2}{h_j} + \frac{L}{2} \frac{\lVert \Delta\rVert ^{2}}{h_j} \ \ \ \eta_1,\eta_2 \in [x_{j-1},x_{j}]
 \end{eqnarray*}
-By hypothesis $\frac{||\Delta||}{h_j} \leq K $ for every interval.
-Thus $|f^{'''}(x) - S^{'''}_{\Delta}(x)| \leq 2LK||\Delta||$
+By hypothesis $\frac{\lVert \Delta\rVert }{h_j} \leq K $ for every interval.
+Thus $|f^{'''}(x) - S^{'''}_{\Delta}(x)| \leq 2LK\lVert \Delta\rVert $
 To prove the proposition for k=2 we observe for each $x \in (a,b)$ a closest
-knot $x_j = x_j(x)$ for which $|x_j(x) - x| \leq \frac{1}{2}||\Delta||$.
+knot $x_j = x_j(x)$ for which $|x_j(x) - x| \leq \frac{1}{2}\lVert \Delta\rVert $.
 \begin{eqnarray*}
 f^{''}(x) - S_{\Delta}^{''}(x) & = & f^{''}(x_j(x)) - S_{\Delta}^{''}(x_j(x)) 
 + \int^{x}_{x(x_j)}(f^{'''}(t)-S_{\Delta}^{'''}(t))dt
@@ -339,8 +339,8 @@ f^{''}(x) - S_{\Delta}^{''}(x) & = & f^{''}(x_j(x)) - S_{\Delta}^{''}(x_j(x))
 and since $K \geq 1$
 
 \begin{eqnarray*}
-|f^{''}(x) - S_{\Delta}^{''}(x)| & \leq & \frac{3}{4} L ||\Delta||^2 +\frac{1}{2}||\Delta||2LK||\Delta|| \\
-& \leq & \frac{7}{4}LK||\Delta||^2  \ \ x \in [a,b]
+|f^{''}(x) - S_{\Delta}^{''}(x)| & \leq & \frac{3}{4} L \lVert \Delta\rVert ^2 +\frac{1}{2}\lVert \Delta\rVert 2LK\lVert \Delta\rVert  \\
+& \leq & \frac{7}{4}LK\lVert \Delta\rVert ^2  \ \ x \in [a,b]
 \end{eqnarray*}
 We consider k=1 next. In addition to the boundary points $\xi_0 = a, \xi_{n+1}=b$
 $\exists$ by Rolle's Theorem, n further points $\xi \in (x_{j-1},x_j),\ \ j=1,...,n$
@@ -350,7 +350,7 @@ f^{'}(\xi_j) = S_{\Delta}^{'}(\xi_j) \ \ j=0,..,n+1
 For $x \in [a,b] \ \exists$ a closest of the above points $\xi_j = \xi_j(x)$, for
 which consequently 
 \[
-|\xi_j(x)-x| \leq ||\Delta||
+|\xi_j(x)-x| \leq \lVert \Delta\rVert 
 \]
 
 Thus
@@ -358,8 +358,8 @@ Thus
 f^{'}(x)-S^{'}_{\Delta}(x) = \int_{\xi_j(x)}^{x}(f^{''}(t)-S^{''}_{\Delta}(t))dt
 \]
 \begin{eqnarray*}
-|f^{'}(x) - S_{\Delta}^{'}(x)| & \leq & \frac{7}{4} L K ||\Delta||^2 ||\Delta||\\
-& \leq & \frac{7}{4}LK||\Delta||^3  \ \ x \in [a,b]
+|f^{'}(x) - S_{\Delta}^{'}(x)| & \leq & \frac{7}{4} L K \lVert \Delta\rVert ^2 \lVert \Delta\rVert \\
+& \leq & \frac{7}{4}LK\lVert \Delta\rVert ^3  \ \ x \in [a,b]
 \end{eqnarray*}
 The case k=0. Since 
 \[
@@ -367,8 +367,8 @@ f(x)-S_{\Delta}(x) = \int_{\xi_j(x)}^{x}(f^{'}(t)-S^{'}_{\Delta}(t))dt
 \]
 It follows from the above result for k=1 that 
 \begin{eqnarray*}
-|f(x) - S_{\Delta}(x)| & \leq & \frac{7}{4} L K ||\Delta||^3 \frac{1}{2}||\Delta||\\
-& \leq & \frac{7}{8}LK||\Delta||^4  \ \ x \in [a,b]
+|f(x) - S_{\Delta}(x)| & \leq & \frac{7}{4} L K \lVert \Delta\rVert ^3 \frac{1}{2}\lVert \Delta\rVert \\
+& \leq & \frac{7}{8}LK\lVert \Delta\rVert ^4  \ \ x \in [a,b]
 \end{eqnarray*}
 \end{proof} $\bigodot$
 \section{Bezier Curves and B-Splines}

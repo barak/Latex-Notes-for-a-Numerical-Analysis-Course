@@ -257,36 +257,36 @@ for all $w \in S$. Since $a$ is bilinear, taking the differences gives
 \end{proof}
 
 The error bounds we are interested in will be in term of the energy norm,
-\[||v||_E=[a(v,v)]^{\frac{1}{2}} \]
+\[\lVert v\rVert_E=[a(v,v)]^{\frac{1}{2}} \]
 for all $v\in D_L$.  The function satisfies the properties:
-\[||\alpha v||_E=\alpha ||a||_E, \ \ \ ||v+z||_{E}\leq ||v||_E+||z||_E \]
+\[\lVert \alpha v\rVert_E=\alpha \lVert a\rVert_E, \ \ \ \lVert v+z\rVert_{E}\leq \lVert v\rVert_E+\lVert z\rVert_E \]
 
 \begin{theorem}
 To show $u_{S}$ is the best fit we show that
-\[||u-u_S||_E = \min_{v\in S}||u-v||_E \]
+\[\lVert u-u_S\rVert_E = \min_{v\in S}\lVert u-v\rVert_E \]
 \end{theorem}
 \begin{proof}
-By the Cauchy -Schwarz Lemma, we have $|a(u,v)|\leq ||u||_E||v||_E$.
+By the Cauchy -Schwarz Lemma, we have $|a(u,v)|\leq \lVert u\rVert_E\lVert v\rVert_E$.
 Let $w=u_S-v \in S$. Using the previous lemma we obtain
 \[\begin{array}{ll}
-||u-u_S||^2_E & = a(u-u_s,u-u_s)\\
+\lVert u-u_S\rVert ^2_E & = a(u-u_s,u-u_s)\\
 & \leq a(u-u_s,u-u_s)+a(u-u_s,w)\\
 & \leq a(u-u_s,u-u_s+w)=a(u-u_s,u-v)\\
-& \leq ||u-u_s||_{E}||u-v||_E.
+& \leq \lVert u-u_s\rVert_{E}\lVert u-v\rVert_E.
 \end{array} \]
-If $||u-u_S ||_E=0$, then the theorem holds. Otherwise
-\[\min ||u-v||_E\leq ||u-u_S|| \leq \min||u-v||_E, \]
+If $\lVert u-u_S \rVert_E=0$, then the theorem holds. Otherwise
+\[\min \lVert u-v\rVert_E\leq \lVert u-u_S\rVert  \leq \min\lVert u-v\rVert_E, \]
 the result follows.
 \end{proof}
 \begin{theorem}
 Error bounds
-\[||u-u_S||_E \leq C h||u^{''}||_\infty\]
+\[\lVert u-u_S\rVert_E \leq C h\lVert u^{''}\rVert_\infty\]
 where C is a constant.
 \end{theorem}
 \begin{proof}
 First from the previous theorem we have that
-\[||u-u_S||_E = \min_{v\in S}||u-v||_E \leq ||u-u_I||_E\]
-We look for a bound on $||u-u_I||_E$, where 
+\[\lVert u-u_S\rVert_E = \min_{v\in S}\lVert u-v\rVert_E \leq \lVert u-u_I\rVert_E\]
+We look for a bound on $\lVert u-u_I\rVert_E$, where 
 \[u_{I}(x) = \sum_j \bar{u_j} \phi_j, \ \ \ \bar{u_j}=u(x_j). \]
 We assume that 
 \[u_{S}(x) = \sum_j u_j \phi_j\] 
@@ -299,24 +299,24 @@ The Schwarz inequality yields the estimate
 \[ \leq (x-x_i) \int_{x_i}^{x}(e'(\xi))^2d \xi \]
 \[ \leq h_i \int_{x_i}^{x_{i+1}}(e'(\xi))^2d \xi \]
 and thus 
-\[||e||^2_{\infty} \leq  h_i \int_{x_i}^{x_{i+1}}(e'(\xi))^2d \xi\leq h_i^2 ||e^{'}||^2_{\infty} \]
+\[\lVert e\rVert ^2_{\infty} \leq  h_i \int_{x_i}^{x_{i+1}}(e'(\xi))^2d \xi\leq h_i^2 \lVert e^{'}\rVert ^2_{\infty} \]
 Similarly,
 \[(e^{'})^2 \leq \int_{x_i}^x 1^2 d \xi \int_{x_i}^{x}(e^{''}(\xi))^2d \xi \]
 \[ \leq (x-x_i) \int_{x_i}^{x}(e{''}(\xi))^2d \xi \]
 \[ \leq h_i \int_{x_i}^{x_{i+1}}(e^{''}(\xi))^2d \xi \]
 and thus 
-\[||e^{'}||^2_{\infty} \leq  h_i \int_{x_i}^{x_{i+1}}(e^{''}(\xi))^2d \xi\leq h_i^2 ||e^{''}||^2_{\infty} \]
+\[\lVert e^{'}\rVert ^2_{\infty} \leq  h_i \int_{x_i}^{x_{i+1}}(e^{''}(\xi))^2d \xi\leq h_i^2 \lVert e^{''}\rVert ^2_{\infty} \]
 Finally we also have
 \[
 \begin{array}{ll}
 a(e,e) =& \int_{x_i}^{x_{i+1}} (p(x)[e^{'}]^2 +q(x)[e(x)]^2)dx \\
-& \leq ||p||_{\infty}\int_{x_i}^{x_{i+1}} [e^{'}]^2 +||q||_{\infty}\int_{x_i}^{x_{i+1}} [e(x)]^2dx \\
-& \leq ||p||_{\infty}h_i^2 ||e^{''}||^2_{\infty}+||q||_{\infty}h_i^2 ||e^{'}||^2_{\infty} \\
-& \leq ||p||_{\infty}h_i^2 ||e^{''}||^2_{\infty}+||q||_{\infty}h_i^4 ||e^{'}||^2_{\infty} \\
-& \leq C h_i^2 ||u^{''}||^2_{\infty}
+& \leq \lVert p\rVert_{\infty}\int_{x_i}^{x_{i+1}} [e^{'}]^2 +\lVert q\rVert_{\infty}\int_{x_i}^{x_{i+1}} [e(x)]^2dx \\
+& \leq \lVert p\rVert_{\infty}h_i^2 \lVert e^{''}\rVert ^2_{\infty}+\lVert q\rVert_{\infty}h_i^2 \lVert e^{'}\rVert ^2_{\infty} \\
+& \leq \lVert p\rVert_{\infty}h_i^2 \lVert e^{''}\rVert ^2_{\infty}+\lVert q\rVert_{\infty}h_i^4 \lVert e^{'}\rVert ^2_{\infty} \\
+& \leq C h_i^2 \lVert u^{''}\rVert ^2_{\infty}
 \end{array}
 \]
-\[||u-u_S||_E = \min_{v\in S}||u-v||_E \leq ||u-u_I||_E \leq C h ||u^{''}||_{\infty}
+\[\lVert u-u_S\rVert_E = \min_{v\in S}\lVert u-v\rVert_E \leq \lVert u-u_I\rVert_E \leq C h \lVert u^{''}\rVert_{\infty}
  \]
 where $h=max\{h_{i}\}$.
 \end{proof}

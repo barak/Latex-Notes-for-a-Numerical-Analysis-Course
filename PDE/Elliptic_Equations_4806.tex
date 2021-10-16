@@ -1024,28 +1024,28 @@ For prescribed grid functions $f_{ij}$ and $g_{ij}$, there exists a unique solut
 \end{proposition}
 \begin{definition}
 For any grid function $V:\Omega_h\bigcup\partial\Omega_h \rightarrow R$,
-\[||V||_{\Omega} =\max_{(x_i,y_j)\in\Omega_h}|V_{ij}|, \]
-\[||V||_{\partial\Omega} =\max_{(x_i,y_j)\in\partial\Omega_h}|V_{ij}|. \]
+\[\lVert V\rVert_{\Omega} =\max_{(x_i,y_j)\in\Omega_h}|V_{ij}|, \]
+\[\lVert V\rVert_{\partial\Omega} =\max_{(x_i,y_j)\in\partial\Omega_h}|V_{ij}|. \]
 $\circ$
 \end{definition}
 \begin{lemma}
 If the grid function $V:\Omega_h\bigcup\partial\Omega_h\rightarrow R$ satisfies the boundary condition $V_{ij}=0$ for $(x_i,y_j)\in \partial\Omega_h$, then
-\[||V_||_{\Omega}\leq \frac{1}{8}||\nabla_h^2V||_{\Omega}. \]
+\[\lVert V\rVert_{\Omega}\leq \frac{1}{8}\lVert \nabla_h^2V\rVert_{\Omega}. \]
 \end{lemma}
 \begin{proof}
-Let $\nu = ||\nabla_{h}^2V||_{\Omega}$. Clearly for all points $(x_i,y_j)\in\Omega_h$,
+Let $\nu = \lVert \nabla_{h}^2V\rVert_{\Omega}$. Clearly for all points $(x_i,y_j)\in\Omega_h$,
 \begin{equation}\label{ineq 828}
 -\nu \leq \nabla_{h}^2V_{ij} \leq \nu \end{equation}
 Now we define $W:\Omega_h \bigcup \partial\Omega_h \rightarrow R$ by setting 
-$W_{ij}=\frac{1}{4}[(x_i-\frac{1}{2})^2+(y_j-\frac{1}{2})^2]$, which is nonnegative.  Also $\nabla_h^2W_{ij}=1$ and that $||W||_{\partial\Omega}=\frac{1}{8}$.
+$W_{ij}=\frac{1}{4}[(x_i-\frac{1}{2})^2+(y_j-\frac{1}{2})^2]$, which is nonnegative.  Also $\nabla_h^2W_{ij}=1$ and that $\lVert W\rVert_{\partial\Omega}=\frac{1}{8}$.
 The inequality (\ref{ineq 828}) implies that, for all points $(x_i,y_j)\in\Omega_h$,
 \[\nabla_h^2(V_{ij}+\nu W_{ij})\geq 0 \]
 \[\nabla_h^2(V_{ij}-\nu W_{ij})\leq 0 \]
 By the discrete minimum principle and the fact that V vanishes on $\partial\Omega_h$
-\[V_{ij}\leq V_{ij}+\nu W_{ij}\leq \nu||W||_{\partial\Omega} \]
-\[V_{ij}\geq V_{ij}-\nu W_{ij}\geq -\nu||W||_{\partial\Omega} \]
-Since $||W||_{\partial\Omega}=\frac{1}{8}$
-\[||V_||_{\Omega}\leq \frac{1}{8}\nu =\frac{1}{8}||\nabla_h^2V||_{\Omega} \]
+\[V_{ij}\leq V_{ij}+\nu W_{ij}\leq \nu\lVert W\rVert_{\partial\Omega} \]
+\[V_{ij}\geq V_{ij}-\nu W_{ij}\geq -\nu\lVert W\rVert_{\partial\Omega} \]
+Since $\lVert W\rVert_{\partial\Omega}=\frac{1}{8}$
+\[\lVert V\rVert_{\Omega}\leq \frac{1}{8}\nu =\frac{1}{8}\lVert \nabla_h^2V\rVert_{\Omega} \]
 $\bullet$\end{proof}
 Finally we prove that the five point scheme for the \addtoindex{Poisson equation} is convergent.
 \begin{theorem}
@@ -1054,7 +1054,7 @@ that satisfies the discrete analog
 \[-\nabla_h^2w_{ij}=f_{ij} \ \ \mbox{ for } (x_i,y_j)\in\Omega_h, \]
 \[w_{ij}=g_{ij} \ \ \mbox{ for } (x_i,y_j)\in\partial\Omega_h. \]
 Then there exists a positive constant $K$ such that
-\[||U-w||_{\Omega}\leq KMh^2 \]
+\[\lVert U-w\rVert_{\Omega}\leq KMh^2 \]
 where
 \[ M=\left\{
 \left|\left|\frac{\partial^4 U}{\partial x^4} \right|\right|_{\infty},
@@ -1075,5 +1075,5 @@ If we subtract from this the identity equation $-\nabla_h^2w_{ij}=f_{ij}$ and no
 that $U-w$ vanishes on $\partial\Omega_h$, we find that
 \[ \nabla_h^2(U_{ij}-w_{ij})=\frac{h^2}{12}\left[ \frac{\partial^4 U}{\partial x^4}(\zeta_i,y_j)+\frac{\partial^4 U}{\partial y^4}(x_i,\eta_j) \right].\]
 It follows that
-\[ ||U-w||_{\Omega}\leq\frac{1}{8}||\nabla_h^2(U-w)||_{\Omega}\leq KMh^2.\]
+\[ \lVert U-w\rVert_{\Omega}\leq\frac{1}{8}\lVert \nabla_h^2(U-w)\rVert_{\Omega}\leq KMh^2.\]
 \end{proof}

@@ -574,19 +574,19 @@ It follows that
 In other words a perturbation $e_0$ of the initial values will propagate according to the equation 
 \[e_j=Ae_{j-1}=A^2e_{j-2}=...=A^je_0 \]
 Hence, for compatible matrix and vector norms
-\[||e_{j}||\leq ||A^{j}||||e_0||\]
+\[\lVert e_{j}\rVert \leq \lVert A^{j}\rVert \lVert e_0\rVert \]
 Lax and Ritchmyer define the difference scheme to be stable when there exists a positive number $M$ independent of $j,k$ such that 
-\[ ||A^{j}||\leq M \]
+\[ \lVert A^{j}\rVert \leq M \]
 The clearly limits the amplification of any initial perturbation and of any arbitrary initial rounding errors.
-\[ ||\mathbf{e}_j||\leq M||\mathbf{e}_0|| \]
+\[ \lVert \mathbf{e}_j\rVert \leq M\lVert \mathbf{e}_0\rVert  \]
 Since
-\[ ||A^j||= ||AA^{j-1}||\leq ||A||||A^{j-1}|| \leq ... \leq ||A||^j \]
+\[ \lVert A^j\rVert = \lVert AA^{j-1}\rVert \leq \lVert A\rVert \lVert A^{j-1}\rVert  \leq ... \leq \lVert A\rVert ^j \]
 It follows that the Lax-Ritchmyer definition of stability is satisfied by
-\[||A|| \leq 1\]
+\[\lVert A\rVert  \leq 1\]
 This is the necessary and sufficient condition for the difference equation to be
 stable then the solution of the \addtoindex{PDE} does not increase as $t \rightarrow T$.\\
 When the condition is satisfied it follows automatically that the spectral radius
-\[\rho(A)\leq 1\] since $\rho(A)\leq ||A||$. If, however $\rho(A)\leq 1$ it does not imply that $||A|| \leq 1$.
+\[\rho(A)\leq 1\] since $\rho(A)\leq \lVert A\rVert $. If, however $\rho(A)\leq 1$ it does not imply that $\lVert A\rVert  \leq 1$.
 \begin{example} 
 Consider the classical explicit equation
 \[ w_{ij+1}=rw_{i-1j}+(1-2r)w_{ij}+rw_{i+1j} \ \ i=1,..,N-1 \]
@@ -602,14 +602,14 @@ r&1-2r&r&0&.&.&.\\
 \end{array}\right)
 \]
 where $r=\frac{k}{h_x^2}>0$ and it is assumed that the boundary values $w_{0j}$ and $w_{Nj}$ are known for $j=1,2,...$.  When $1-2r \geq 0$ then $0\leq r \leq \frac{1}{2}$ and
-\[ ||A||_{\infty}=r+1-2r+r=1. \]
+\[ \lVert A\rVert_{\infty}=r+1-2r+r=1. \]
 When $1-2r <0$ then $r >\frac{1}{2}$ then $|1-2r|=2r-1$
 and
-\[||A||_{\infty}=r+2r-1+r=4r-1>1\]
+\[\lVert A\rVert_{\infty}=r+2r-1+r=4r-1>1\]
 there fore the scheme is unstable for $r>\frac{1}{2}$ and stable for 
 $0<r \leq \frac{1}{2}$.\\
 Alternatively since A is real and symmetric 
-\[||A||_2=\rho(A)=\max_j|\mu_j| \]
+\[\lVert A\rVert_2=\rho(A)=\max_j|\mu_j| \]
 where $|\mu_j|$ is the jth eigenvalue of A. Now A can be written as
 \[ \left(\begin{array}{ccccccc}
 1&0&0&.&.&.&.\\
@@ -633,7 +633,7 @@ matrix whose eigen values $\lambda_j$ are given by
 Hence the eigenvalues of A are
 \[\mu_j=1-4rsin^2(\frac{j\pi}{2N}) \]
 therefore the equation will be stable when
-\[||A||_2=\max_s|1-4rsin^2(\frac{s\pi}{2N})|\leq 1\]
+\[\lVert A\rVert_2=\max_s|1-4rsin^2(\frac{s\pi}{2N})|\leq 1\]
 ie
 \[ -1 \leq 1-4rsin^2(\frac{s\pi}{2N})\leq 1 \ \ s=1,..N-1\]
 the left hand side of the inequality gives
@@ -694,7 +694,7 @@ $T_{N-1}$ has the eigenvalues $\lambda_s=-4sin^2(\frac{s\pi}{2N})$ for $s=1,...,
 It follows that the eigenvalues of A are 
 \[\mu_s=\frac{2-4rsin^2(\frac{s\pi}{2N})}{2+4rsin^2(\frac{s\pi}{2N})}.\]
 Thus
-\[ ||A||_{\infty}=\rho(A)=\max_s\left|\frac{2-4rsin^2(\frac{s\pi}{2N})}{2+4rsin^2(\frac{s\pi}{2N})}  \right| <1\]
+\[ \lVert A\rVert_{\infty}=\rho(A)=\max_s\left|\frac{2-4rsin^2(\frac{s\pi}{2N})}{2+4rsin^2(\frac{s\pi}{2N})}  \right| <1\]
 therefore Crank-Nicholson is unconditionally stable.
 $\diamond$
 \end{example} 

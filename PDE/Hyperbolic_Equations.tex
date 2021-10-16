@@ -108,10 +108,10 @@ zero independently is said to be consistent.
 \section{Courant Freidrich Lewy Condition}
 A method is said to be stable if, for any $T$ here exist a constant $C_T>0$
 and $\delta_0$ such that
-\[|| \mathbf{u}^n ||_{\Delta}\leq C_T ||\mathbf{u}^0||_{\Delta} \]
+\[\lVert  \mathbf{u}^n \rVert_{\Delta}\leq C_T \lVert \mathbf{u}^0\rVert_{\Delta} \]
 for any $n$ such that $n\Delta t \leq T$ and for any $\Delta t, \Delta x$ such that $0 < \Delta t \leq \delta_0,0 < \Delta x \leq \delta_0$. We have denoted by
 $ 
-|| . ||_{\Delta}$ a suitable discrete norm.
+\lVert  . \rVert_{\Delta}$ a suitable discrete norm.
 
 Forward Euler/centered
 \[ u^{n+1}_j=u^{n}_{j}-\frac{\lambda}{2}a(u^{n}_{j+1}-u^{n}_{j-1})\]

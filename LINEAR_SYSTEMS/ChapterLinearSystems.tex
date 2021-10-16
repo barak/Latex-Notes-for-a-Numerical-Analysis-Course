@@ -241,13 +241,13 @@ The ith component of this equation is
 and so
 \[ \lambda = - \frac{1}{a_{ii}v_i } \sum_{j=1,j\not=i}^{n}a_{ij}v_j\]
 which implies 
-\[ \lambda \leq \frac{1}{|a_{ii}||v_i| } |\sum_{j=1,j\not=i}^{n}a_{ij}v_j|\]
+\[ \lambda \leq \frac{1}{|a_{ii}\lVert v_i| } |\sum_{j=1,j\not=i}^{n}a_{ij}v_j|\]
 Using the triangle inequality $|A+B| \leq |A|+|B|$ we have
 \[|\sum_{j=1,j\not=i}^{n}a_{ij}v_j|\leq \sum_{j=1,j\not=i}^{n}|a_{ij}v_{j}|
 \leq |v_i| \sum_{j=1,j\not=i}^{n} |a_{ij}| \]
 since $|v_i| \geq v_j $
 Hence
-\[ \lambda \leq \frac{|v_i|}{|a_{ii}||v_i| } \sum_{j=1,j\not=i}^{n}|a_{ij}|=
+\[ \lambda \leq \frac{|v_i|}{|a_{ii}\lVert v_i| } \sum_{j=1,j\not=i}^{n}|a_{ij}|=
 \frac{1}{|a_{ii}| } \sum_{j=1,j\not=i}^{n}|a_{ij}|\]
 However from the definition of diagonal dominance
 \[ |a_{ii}| > \sum_{j=1,j\not=i}^{n}|a_{ij}| \]
@@ -271,7 +271,7 @@ By the triangle inequality
 \[ \left|\sum_{j=1}^{i-1}a_{ij}v_j \right| \leq \sum_{j=1}^{i-1}|a_{ij}v_j| \leq |v_i|\sum_{j=1}^{i-1}|a_{ij}|  \]
 Since $|v_j| \leq |v_i|$ and so
 \begin{eqnarray*} 
-\left|\sum_{j=1}^{i}a_{ij}v_j \right| & \geq & |a_{ii}||v_{i}| -|v_i|\sum_{j=1}^{i-1}|a_{ij}|  \\
+\left|\sum_{j=1}^{i}a_{ij}v_j \right| & \geq & |a_{ii}\lVert v_{i}| -|v_i|\sum_{j=1}^{i-1}|a_{ij}|  \\
  & = & |v_i|(|a_{ii}| -\sum_{j=1}^{i-1}|a_{ij}|)  
 \end{eqnarray*} 
 which is positive from the diagonal dominance condition.\\
@@ -426,14 +426,14 @@ r_i = -Ae_i = - \sum_{j} \xi_j \lambda_j v_j
 \end{equation}
 
 \begin{equation}
-||e_i|| = e_i^Te_i = \sum \xi_j^2
+\lVert e_i\rVert  = e_i^Te_i = \sum \xi_j^2
 \end{equation}
 \begin{equation}
 e^T_iAe_i =( \sum_j \xi_j v_j^T) \sum_j \xi_j \lambda_j v_j = \sum \xi^2 \lambda_j 
 \end{equation}
 
 \begin{equation}
-||r_i||^2 = \sum_j \xi_j^2 \lambda_j^2
+\lVert r_i\rVert ^2 = \sum_j \xi_j^2 \lambda_j^2
 \end{equation}
 \begin{equation}
 r_i^TAr_i = \sum_j \xi_j^2 \lambda_j^3
@@ -442,23 +442,23 @@ r_i^TAr_i = \sum_j \xi_j^2 \lambda_j^3
 \begin{equation}
 e_{i+1} = e_{i} +\frac{\sum_j\xi_j\lambda_j^2}{\sum_j \xi_j^2 \lambda_j}r_i
 \end{equation}
-To bound the convergence we use the energy norm $||e||_A=(e^TAe)^{\frac{1}{2}}$
+To bound the convergence we use the energy norm $\lVert e\rVert_A=(e^TAe)^{\frac{1}{2}}$
 \begin{eqnarray*}
-||e_{i+1}||^2_a &= &e_{i+1}^TAe_{i+1}\\
+\lVert e_{i+1}\rVert ^2_a &= &e_{i+1}^TAe_{i+1}\\
 &=&(e_i^T+\alpha_ir_i^T)A(e_i + \alpha_i r_i)\\
 &=& e_i^TAe_i+2 \alpha_i r_i^TAe_i + \alpha^2_i r_i^T A r_i \\
-& = & ||e_i||^2_A+2\frac{r_i^Tr_i}{r_i^TAr_i}(-r_i^Tr_i)+\left(\frac{r_i^Tr_i}{r_i^TAr_i}\right)^2r_i^TAr_i\\
-&=&||e_i||_A^2-\frac{(r_i^Tr_i)^2}{r_i^TAr_i}\\
-&=&||e_i||_A^2\left( 1-\frac{(r_i^Tr_i)^2}{(r_i^TAr_i)(e_i^TAe_i)}\right)\\
-&=&||e_i||_A^2\left( 1-\frac{(\sum_{j}\xi_{j}^2\lambda^2)^2}{(\sum_j \xi_{j}^2\lambda^3 )( \sum_{j}\xi_{j}^2\lambda  )}\right)\\
-&=&||e_i||_A^2\omega^2, \ \ \ \omega^2=\left( 1-\frac{(\sum_{j}\xi_{j}^2\lambda^2)^2}{(\sum_j \xi_{j}^2\lambda^3 )( \sum_{j}\xi_{j}^2\lambda  )}\right)\\
+& = & \lVert e_i\rVert ^2_A+2\frac{r_i^Tr_i}{r_i^TAr_i}(-r_i^Tr_i)+\left(\frac{r_i^Tr_i}{r_i^TAr_i}\right)^2r_i^TAr_i\\
+&=&\lVert e_i\rVert_A^2-\frac{(r_i^Tr_i)^2}{r_i^TAr_i}\\
+&=&\lVert e_i\rVert_A^2\left( 1-\frac{(r_i^Tr_i)^2}{(r_i^TAr_i)(e_i^TAe_i)}\right)\\
+&=&\lVert e_i\rVert_A^2\left( 1-\frac{(\sum_{j}\xi_{j}^2\lambda^2)^2}{(\sum_j \xi_{j}^2\lambda^3 )( \sum_{j}\xi_{j}^2\lambda  )}\right)\\
+&=&\lVert e_i\rVert_A^2\omega^2, \ \ \ \omega^2=\left( 1-\frac{(\sum_{j}\xi_{j}^2\lambda^2)^2}{(\sum_j \xi_{j}^2\lambda^3 )( \sum_{j}\xi_{j}^2\lambda  )}\right)\\
 \end{eqnarray*}
 The value of $\omega$ determines the rate of convergence of \addtoindex{Steepest Descent}. 
 It can be shown that 
 \[ \omega^2 \leq \frac{(K-1)}{(K+1)} \]
 where $K=\frac{\lambda_{max}}{\lambda_{min}}$
 The convergence results for the \addtoindex{Steepest Descent} are 
-\[||e_i||_A\leq\left(\frac{(K-1)}{(K+1)}\right)^i||e_0||_A \]
+\[\lVert e_i\rVert_A\leq\left(\frac{(K-1)}{(K+1)}\right)^i\lVert e_0\rVert_A \]
 from this we can say
 \begin{eqnarray*}
  \frac{f(x_i)-f(x)}{f(x_0)-f(x)} &=& \frac{\frac{1}{2}e_i^TAe_i}{\frac{1}{2}e_0^TAe_0}\\
